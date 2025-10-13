@@ -8,12 +8,11 @@ import './App.css'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { createPostSchema, type CreatePostInput } from './types/post.type'
-import toast from 'react-hot-toast'
-import { createPost } from './api/post.api'
+import { useCreatePost } from './hooks/useCreatePost'
 
 function App() {
   // register is used inside <input> to register the input fields
-  const { register, handleSubmit, formState: { errors, isSubmitting }, setError } = useForm<CreatePostInput>({
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<CreatePostInput>({
     defaultValues: {
       title: '',
       body: ''
@@ -21,17 +20,12 @@ function App() {
     resolver: zodResolver(createPostSchema) // This will ensure that the form data is validated against the schema
   })
 
+  // React Query mutation hook to create a post
+  const { mutateAsync: createPost } = useCreatePost();
+
   const onSubmit: SubmitHandler<CreatePostInput> = async (data: CreatePostInput) => {
-    try {
-      await createPost(data);
-      toast.success("Post created successfully");
-    } catch (error) {
-      console.log(error);
-      toast.error("Failed to create post");
-      // This is how you can set root errors (errors not related to specific fields)
-      setError("root", { message: "Something went wrong! Please try again later." });
-      // You can also set field-specific errors using setError('fieldName', { message: 'Error message' });
-    }
+    await createPost(data);
+    reset(); // Reset the form after successful submission
   }
 
   return (
