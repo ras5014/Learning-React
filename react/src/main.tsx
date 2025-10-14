@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { lazy, Suspense } from 'react'
 
 /* 
+  - Lazy Loading is used to decrease the initial load bundle size
   - Lazy Loading App component
   - Wrapping App with Suspense component to show fallback while loading
   - ✅ What happens:
