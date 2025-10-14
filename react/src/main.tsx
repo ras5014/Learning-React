@@ -1,26 +1,27 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
-
-// React Query Setup
-/*
-   1. Create a QueryClient instance
-   2. Wrap your application with QueryClientProvider
-   3. Add ReactQueryDevtools for easier debugging
-   4. React Query Makes Data Fetching Easy
-      - Handles loading, error, and success states
-      - Handled caching
-      - Handles race condition
-*/
-
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { lazy, Suspense } from 'react'
+
+/* 
+  - Lazy Loading App component
+  - Wrapping App with Suspense component to show fallback while loading
+  - ✅ What happens:
+    The App code isn’t in the main JS bundle.
+    When <App /> is first rendered, React downloads App.tsx’s chunk.
+    App Component doesn't load until it is required to render. We can add a button to show/hide the component to see this in action.
+*/
+const App = lazy(() => import('./App'))
 
 const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
-    <App />
+    {/* Suspense shows fallback while the About component loads */}
+    <Suspense fallback={<div>Loading...</div>}>
+      <App />
+    </Suspense>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 )
