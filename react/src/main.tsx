@@ -5,7 +5,8 @@ import HomePage from './pages/HomePage.tsx'
 /*
   React Router V7 Instructions:
   - npm i react-router
-  - 
+  - We can make layouts and dynamic routes using this
+  - https://reactrouter.com/start/data/installation
 */
 
 // React Router Setup
@@ -19,7 +20,7 @@ import ProfileDetails from './pages/ProfileDetails.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: MainLayout,
+    Component: MainLayout, // This is Layout
     children: [
       {
         index: true,
