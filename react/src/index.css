@@ -55,3 +55,6 @@
   }
 }
 
+.layout-background {
+  @apply text-black border p-[10px] bg-[whitesmoke];
+}
