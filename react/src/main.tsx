@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.tsx'
   React Router V7 Instructions:
   - npm i react-router
   - We can make layouts and dynamic routes using this
+  - Can make notFound Page
   - https://reactrouter.com/start/data/installation
 */
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout, // This is Layout
+    errorElement: <div>404 Not Found!</div>, // For Not Found Page
     children: [
       {
         index: true,
