@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: ":profileId", // For Dynamic Routes
-            Component: ProfileDetails
+            Component: ProfileDetails,
           }
         ]
       }
