@@ -1,0 +1,13 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "search": { "placeholder": "Search tasks..." },
+  "profile": {
+    "myProfile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  }
+}

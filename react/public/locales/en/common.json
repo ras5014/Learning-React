@@ -1,0 +1,29 @@
+{
+  "app": {
+    "title": "My Todo App",
+    "description": "Organize your daily tasks"
+  },
+  "buttons": {
+    "add": "Add",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "clear": "Clear All",
+    "submit": "Submit"
+  },
+  "messages": {
+    "welcome": "Welcome, {{name}}!",
+    "noData": "No data available",
+    "loading": "Loading...",
+    "success": "Operation successful!",
+    "error": "An error occurred",
+    "confirmDelete": "Are you sure?"
+  },
+  "language": {
+    "label": "Select Language",
+    "english": "English",
+    "french": "Français",
+    "spanish": "Español"
+  }
+}

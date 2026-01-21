@@ -1,0 +1,29 @@
+{
+  "app": {
+    "title": "Mon application Todo",
+    "description": "Organisez vos tâches quotidiennes"
+  },
+  "buttons": {
+    "add": "Ajouter",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "clear": "Tout effacer",
+    "submit": "Envoyer"
+  },
+  "messages": {
+    "welcome": "Bienvenue, {{name}} !",
+    "noData": "Aucune donnée disponible",
+    "loading": "Chargement...",
+    "success": "Opération réussie !",
+    "error": "Une erreur est survenue",
+    "confirmDelete": "Êtes-vous sûr ?"
+  },
+  "language": {
+    "label": "Sélectionner la langue",
+    "english": "Anglais",
+    "french": "Français",
+    "spanish": "Espagnol"
+  }
+}

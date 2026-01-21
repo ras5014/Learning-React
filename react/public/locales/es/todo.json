@@ -1,0 +1,37 @@
+{
+  "form": {
+    "title": "Agregar nueva tarea",
+    "label": "Título de la tarea",
+    "placeholder": "¿Qué hay que hacer?",
+    "priority": "Prioridad",
+    "priorityHigh": "Alta",
+    "priorityMedium": "Media",
+    "priorityLow": "Baja",
+    "dueDate": "Fecha de vencimiento",
+    "submit": "Agregar tarea"
+  },
+  "list": {
+    "title": "Tus tareas",
+    "empty": "Tu lista de tareas está vacía",
+    "completed": "{{count}} tarea completada",
+    "completed_plural": "{{count}} tareas completadas",
+    "pending": "{{count}} tarea pendiente",
+    "pending_plural": "{{count}} tareas pendientes"
+  },
+  "item": {
+    "markComplete": "Marcar como completada",
+    "markPending": "Marcar como pendiente",
+    "delete": "Eliminar tarea",
+    "edit": "Editar tarea"
+  },
+  "status": {
+    "pending": "Pendiente",
+    "inProgress": "En progreso",
+    "completed": "Completada"
+  },
+  "validation": {
+    "required": "El título de la tarea es obligatorio",
+    "minLength": "La tarea debe tener al menos {{count}} caracteres",
+    "maxLength": "La tarea no puede exceder {{count}} caracteres"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "search": { "placeholder": "Buscar tareas..." },
+  "profile": {
+    "myProfile": "Mi perfil",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión"
+  }
+}

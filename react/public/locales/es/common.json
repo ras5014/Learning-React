@@ -1,0 +1,29 @@
+{
+  "app": {
+    "title": "Mi aplicación de tareas",
+    "description": "Organiza tus tareas diarias"
+  },
+  "buttons": {
+    "add": "Añadir",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "clear": "Borrar todo",
+    "submit": "Enviar"
+  },
+  "messages": {
+    "welcome": "¡Bienvenido, {{name}}!",
+    "noData": "No hay datos disponibles",
+    "loading": "Cargando...",
+    "success": "¡Operación exitosa!",
+    "error": "Ocurrió un error",
+    "confirmDelete": "¿Estás seguro?"
+  },
+  "language": {
+    "label": "Seleccionar idioma",
+    "english": "Inglés",
+    "french": "Francés",
+    "spanish": "Español"
+  }
+}

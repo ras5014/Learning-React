@@ -1,0 +1,37 @@
+{
+  "form": {
+    "title": "Ajouter une nouvelle tâche",
+    "label": "Titre de la tâche",
+    "placeholder": "Que faut-il faire ?",
+    "priority": "Priorité",
+    "priorityHigh": "Haute",
+    "priorityMedium": "Moyenne",
+    "priorityLow": "Faible",
+    "dueDate": "Date d'échéance",
+    "submit": "Ajouter la tâche"
+  },
+  "list": {
+    "title": "Vos tâches",
+    "empty": "Votre liste de tâches est vide",
+    "completed": "{{count}} tâche terminée",
+    "completed_plural": "{{count}} tâches terminées",
+    "pending": "{{count}} tâche en attente",
+    "pending_plural": "{{count}} tâches en attente"
+  },
+  "item": {
+    "markComplete": "Marquer comme terminée",
+    "markPending": "Marquer comme en attente",
+    "delete": "Supprimer la tâche",
+    "edit": "Modifier la tâche"
+  },
+  "status": {
+    "pending": "En attente",
+    "inProgress": "En cours",
+    "completed": "Terminée"
+  },
+  "validation": {
+    "required": "Le titre de la tâche est obligatoire",
+    "minLength": "La tâche doit comporter au moins {{count}} caractères",
+    "maxLength": "La tâche ne peut pas dépasser {{count}} caractères"
+  }
+}
