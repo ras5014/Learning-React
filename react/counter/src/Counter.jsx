@@ -1,6 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-const { increment, decrement } = await import("host/counterSlice");
+// Import actions from local counterSlice
+// This allows Counter to work both:
+// 1. Standalone: uses local store with local slice
+// 2. Federated: uses host's store but with same action creators
+// The store (local or host) determines which reducer state is used
+import { increment, decrement } from "./features/counter/counterSlice";
 
 export function Counter() {
   const dispatch = useDispatch();
