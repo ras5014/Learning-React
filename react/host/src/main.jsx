@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./App.jsx";
 import "./index.css";
+import { AppStoreProvider } from "./providers/AppStoreProvider.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <AppStoreProvider>
+    <App />
+  </AppStoreProvider>,
+);

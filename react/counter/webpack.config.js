@@ -5,11 +5,12 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: "./src/main.jsx",
+  devtool: "source-map",
   devServer: {
-    port: 3000,
+    port: 3003,
   },
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath: "http://localhost:3003/",
   },
   module: {
     rules: [
@@ -34,16 +35,13 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "host",
+      name: "counter",
       filename: "remoteEntry.js",
       exposes: {
-        "./AppStoreProvider": "./src/providers/AppStoreProvider.jsx",
-        "./counterSlice": "./src/features/counter/counterSlice",
+        "./Counter": "./src/Counter.jsx",
       },
       remotes: {
-        header: "header@http://localhost:3001/remoteEntry.js",
-        products: "products@http://localhost:3002/remoteEntry.js",
-        counter: "counter@http://localhost:3003/remoteEntry.js",
+        host: "host@http://localhost:3000/remoteEntry.js",
       },
       shared: {
         react: { singleton: true, eager: true },
