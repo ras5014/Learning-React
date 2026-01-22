@@ -17,6 +17,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
+        devtool: "source-map",
         use: {
           loader: "babel-loader",
           options: {
@@ -37,6 +38,10 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       filename: "remoteEntry.js",
+      exposes: {
+        "./AppStoreProvider": "./src/providers/AppStoreProvider.jsx",
+        "./counterSlice": "./src/features/counter/counterSlice",
+      },
       remotes: {
         header: "header@http://localhost:3001/remoteEntry.js",
         products: "products@http://localhost:3002/remoteEntry.js",
@@ -44,6 +49,8 @@ module.exports = {
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },
+        "react-redux": { singleton: true, eager: true },
+        "@reduxjs/toolkit": { singleton: true, eager: true },
       },
     }),
     new HtmlWebpackPlugin({
