@@ -12,11 +12,13 @@ import { useCreatePost } from './hooks/useCreatePost'
 
 function App() {
   // register is used inside <input> to register the input fields
+  // To the form inferred types will be given 
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<CreatePostInput>({
     defaultValues: {
       title: '',
       body: ''
     },
+    // To zod resolver the zod schema will be given
     resolver: zodResolver(createPostSchema) // This will ensure that the form data is validated against the schema
   })
 
