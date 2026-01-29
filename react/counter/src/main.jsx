@@ -7,6 +7,8 @@ import FallbackStoreProvider from "./providers/FallbackStoreProvider.jsx";
 
 let root = null;
 
+const isStandalone = !window.singleSpaNavigate; // Defined in products app
+
 /**
  * BOOTSTRAP - One time setup
  * Called once when the application is first registered
@@ -24,6 +26,12 @@ export async function mount(props) {
   console.log("📌 Counter: Mount called with props:", props);
   const rootElement = document.getElementById("counter-app");
   root = ReactDOM.createRoot(rootElement);
+
+  // Safety check: ensure the container exists before rendering
+  if (!rootElement) {
+    console.warn("Counter root element not found: #counter-app");
+    return;
+  }
 
   const { store } = props;
 
@@ -53,4 +61,9 @@ export async function unmount(props) {
     root.unmount();
     root = null;
   }
+}
+
+if (isStandalone) {
+  // If running standalone, immediately mount the app
+  mount({});
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
+import { BrowserRouter as Router, Link } from "react-router";
 
 export function App() {
   return (
@@ -8,7 +8,7 @@ export function App() {
         {/* Navigation */}
         <nav className="nav">
           <Link to="/" className="ml-20">
-            Header
+            Home
           </Link>
           <Link to="/counter" className="ml-20">
             Counter

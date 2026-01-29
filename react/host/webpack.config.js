@@ -7,6 +7,7 @@ module.exports = {
   entry: "./src/main.jsx",
   devServer: {
     port: 3000,
+    historyApiFallback: true,
   },
   output: {
     publicPath: "http://localhost:3000/",
@@ -50,7 +51,7 @@ module.exports = {
         "react-dom": { singleton: true, eager: true },
         "react-redux": { singleton: true, eager: true },
         "@reduxjs/toolkit": { singleton: true, eager: true },
-        "single-spa": { singleton: true },
+        "single-spa": { singleton: true, eager: true },
       },
     }),
     new HtmlWebpackPlugin({
