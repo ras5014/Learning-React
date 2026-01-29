@@ -1,0 +1,12 @@
+.nav {
+    padding: 20px; 
+    border-bottom: 1px solid #ccc;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.p-10 {
+    padding: 10px;
+}

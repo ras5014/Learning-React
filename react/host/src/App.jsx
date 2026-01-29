@@ -1,29 +1,32 @@
-import React, { Suspense, lazy } from "react";
-
-// lazy loading remote components
-const Header = lazy(() =>
-  import("header/Header").then((module) => ({ default: module.Header })),
-);
-const Products = lazy(() =>
-  import("products/Products").then((module) => ({ default: module.Products })),
-);
-
-const Counter = lazy(() =>
-  import("counter/Counter").then((module) => ({ default: module.Counter })),
-);
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
 
 export function App() {
   return (
-    <div>
-      <Suspense fallback={<div>Loading Header...</div>}>
-        <Header />
-      </Suspense>
-      <Suspense fallback={<div>Loading Products...</div>}>
-        <Products />
-      </Suspense>
-      <Suspense fallback={<div>Loading Counter...</div>}>
-        <Counter />
-      </Suspense>
-    </div>
+    <Router>
+      <div>
+        {/* Navigation */}
+        <nav className="nav">
+          <Link to="/" className="ml-20">
+            Header
+          </Link>
+          <Link to="/counter" className="ml-20">
+            Counter
+          </Link>
+          <Link to="/products" className="ml-20">
+            Products
+          </Link>
+        </nav>
+
+        {/* Container for Header (always visible) */}
+        <div id="header-app" className="p-10"></div>
+
+        {/* Container for Counter (mounted when route is /counter) */}
+        <div id="counter-app" className="p-10"></div>
+
+        {/* Container for Products (mounted when route is /products) */}
+        <div id="products-app" className="p-10"></div>
+      </div>
+    </Router>
   );
 }

@@ -50,6 +50,7 @@ module.exports = {
         "react-dom": { singleton: true, eager: true },
         "react-redux": { singleton: true, eager: true },
         "@reduxjs/toolkit": { singleton: true, eager: true },
+        "single-spa": { singleton: true },
       },
     }),
     new HtmlWebpackPlugin({

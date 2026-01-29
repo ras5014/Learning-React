@@ -39,6 +39,7 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         "./Counter": "./src/Counter.jsx",
+        "./singleSpaEntry": "./src/main.jsx",
       },
       remotes: {
         host: "host@http://localhost:3000/remoteEntry.js",

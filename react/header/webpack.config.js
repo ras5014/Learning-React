@@ -39,6 +39,7 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         "./Header": "./src/Header.jsx",
+        "./singleSpaEntry": "./src/main.jsx",
       },
       shared: {
         react: { singleton: true, eager: true },
