@@ -7,7 +7,7 @@
     "dev": "vite --port 4000 --cors",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview --port 4000 --cors"
+    "preview": "vite preview --port 4000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",

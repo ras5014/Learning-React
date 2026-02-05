@@ -26,11 +26,15 @@ registerApplication({
 // Register the remote micro-frontends
 registerApplication({
     name: 'products',
-    app: () => import('products/ProductsApp').then(module => ({
-        bootstrap: module.bootstrap,
-        mount: module.mount,
-        unmount: module.unmount
-    })),
+    app: () =>
+        import('products/ProductsApp').then((module: any) => {
+            const lifecycles = module?.default ?? module
+            return {
+                bootstrap: lifecycles?.bootstrap,
+                mount: lifecycles?.mount,
+                unmount: lifecycles?.unmount
+            }
+        }),
     activeWhen: ['/products']
 })
 
