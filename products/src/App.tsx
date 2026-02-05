@@ -1,9 +1,8 @@
 function App() {
-
   return (
-    <>
-      <h1>Hello Vite + React!</h1>
-    </>
+    <div>
+      <h1>Products</h1>
+    </div>
   )
 }
 
